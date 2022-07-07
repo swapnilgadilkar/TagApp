@@ -8,7 +8,7 @@ import TagForm from '../components/TagForm';
 function CreateTag() {
   return (
     <View style={{flex: 1}}>
-      <AppHeader />
+      <AppHeader title={'Tag Object'} />
       <BackGround>
         <TopArea>
           <TagForm />

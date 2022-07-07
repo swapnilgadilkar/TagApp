@@ -10,7 +10,7 @@ function EditTag({route}) {
   const {item} = route.params;
   return (
     <View style={styles.safeareaContainer} edges={['top']}>
-      <AppHeader />
+      <AppHeader title={'Update Object'} />
       <BackGround>
         <TopArea>
           <TagForm isEdit={true} item={item} />

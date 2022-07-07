@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import BackIcon from '../assets/back-icon';
 import {useNavigation} from '@react-navigation/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-export default function AppHeader({isBack = true}) {
+export default function AppHeader({isBack = true, title}) {
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
   return (
@@ -24,9 +24,12 @@ export default function AppHeader({isBack = true}) {
         </TouchableOpacity>
       )}
       {!isBack && <View style={{flex: 1}} />}
-      <View style={styles.appHeaderText}>
-        <Text style={styles.header}>tagSpace</Text>
-        <Text style={styles.subHeader}>Tag & Find Anything</Text>
+      <View
+        style={[
+          styles.appHeaderText,
+          title === 'Home' ? {paddingVertical: 12} : {},
+        ]}>
+        <Text style={styles.header}>{title}</Text>
       </View>
       <View style={{flex: 1}} />
     </LinearGradient>
@@ -40,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     color: 'white',
   },
@@ -55,7 +58,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   backIconContainer: {
-    flex: 0.75,
     marginLeft: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

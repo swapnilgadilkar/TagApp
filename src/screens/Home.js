@@ -18,7 +18,7 @@ function Home({navigation}) {
 
   return (
     <View style={{flex: 1}}>
-      <AppHeader isBack={false} />
+      <AppHeader title={'Home'} isBack={false} />
 
       <BackGround>
         <TopArea>

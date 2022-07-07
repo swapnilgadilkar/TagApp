@@ -73,9 +73,6 @@ export default function TagForm({isEdit = false, item = {}}) {
         }) => (
           <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
             <View>
-              <Text style={styles.pageHeader}>
-                {isEdit ? 'Update' : 'Tag'} Object
-              </Text>
               <TextInput
                 value={values.tagName}
                 style={inputStyle}

@@ -9,9 +9,8 @@ export default function ManageTags() {
   const objectsList = useSelector(state => state.objects);
   return (
     <View style={styles.container}>
-      <AppHeader />
+      <AppHeader title={'Manage Objects'} />
       <View style={styles.mainContainer}>
-        <Text style={styles.listHeader}>Manage Objects</Text>
         {objectsList && objectsList.length === 0 && <EmptyTags />}
         <FlatList
           data={objectsList}
@@ -27,7 +26,6 @@ const styles = StyleSheet.create({
   container: {flex: 1},
   mainContainer: {
     flex: 1,
-    margin: 14,
   },
   listHeader: {
     fontSize: 26,
